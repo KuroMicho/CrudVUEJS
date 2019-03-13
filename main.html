@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>SwordArtOnline</title>
+</head>
+
+<body>
+    <h1>HOLA MUNDO</h1>
+
+
+    <ul id="post">
+
+    </ul>
+
+
+    <div id="app">
+        {{nombre + " " + apellido}}
+        <br>
+        Su nombre es: {{nombre}}
+        <br>
+        Su apellido es: {{apellido}}
+        <br>
+
+        <h1 v-if="mostrar">Soy un texto oculto</h1>
+        <h1 v-else>Soy un texto no oculto</h1>
+        <button @click="mostrar = !mostrar">Mostrar</button>
+        <br>
+        <br>    
+        <div v-for="item in municipios">
+            {{ item }}
+        </div>
+
+        <br>
+        <br>
+
+        <li v-for="persona in personas">
+            {{ persona.celular }}
+        </li>
+        <br>
+        <br>
+        <br>
+
+        <input type="text" v-model="msg" placeholder="Ingrese tu Nombre">
+        <br>
+        <h1>Hola!, {{msg}}</h1>
+        <button @click="guardar">Guardar</button>
+
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+            <tr v-for=" item in lista ">
+                <td>
+                    {{ item }}
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
