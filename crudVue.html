@@ -6,17 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CRUD VUEJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+    <link rel="stylesheet" href="estilos.css">
+
 </head>
 
 <body>
+    <div class="uk-panel uk-padding uk-background-secondary uk-light">
+        <a class="uk-logo" href=""><img
+                src="https://mm3.vistoenpantalla.com/imagenes-productos/camiseta-capitan-america-mario-bros-esc-large2.jpg"
+                height="80px" width="80px" alt=""></a>
+    </div>
+
+    <div class="uk-container uk-container-xsmall">
+
+        <button style="border-color:black"> <a href="./main.html">Pagina1</a></button>
+
+        <br>
+
+        <div id="app">
+
+            <div v-if="show_now==true">
+                <h1>Crear Nuevo Registro</h1>
+                <br>
+                <input type="text" placeholder="Ingrese su nombre" v-model="nombre">
+                <input type="text" placeholder="Ingrese su apellido" v-model="apellido">
+                <button class="uk-button uk-button-primary" @click="guardar">Guardar</button>
+                <button class="uk-button uk-button-secondary" @click="show_now = false">Cancelar</button>
+
+            </div>
 
 
+            <div v-else="show_now==false">
+                <h1>Datos registrados</h1>
+                <button class="uk-button uk-button-secondary" @click="show_now = true">Nuevo</button>
+                <br>
+                <table>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-    <div app=""></div>
 
-
-
-
+    </div>
 
 
 
@@ -27,6 +66,8 @@
     <script src="vue.js"></script>
     <script src="index2.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 
 </body>
 

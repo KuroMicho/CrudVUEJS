@@ -5,63 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>SwordArtOnline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-    <h1>HOLA MUNDO</h1>
+    <div class="uk-panel uk-padding uk-background-secondary uk-light">
+        <h1>HOLA</h1>
+        <a class="uk-logo" href="#"></a><img
+                src="https://mm3.vistoenpantalla.com/imagenes-productos/camiseta-capitan-america-mario-bros-esc-large2.jpg"
+                height="80px" width="80px" alt=""></a>
+    </div>
+
+    <div class="uk-container uk-container-xsmall">
+
+        <button style="border-color:aquamarine"> <a href="./crudVue.html">Pagina2</a></button>
+
+        <h1>HOLA MUNDO</h1>
 
 
-    <ul id="post">
+        <ul id="post">
 
-    </ul>
+        </ul>
 
 
-    <div id="app">
-        {{nombre + " " + apellido}}
-        <br>
-        Su nombre es: {{nombre}}
-        <br>
-        Su apellido es: {{apellido}}
-        <br>
+        <div id="app">
+            {{nombre + " " + apellido}}
+            <br>
+            Su nombre es: {{nombre}}
+            <br>
+            Su apellido es: {{apellido}}
+            <br>
 
-        <h1 v-if="mostrar">Soy un texto oculto</h1>
-        <h1 v-else>Soy un texto no oculto</h1>
-        <button @click="mostrar = !mostrar">Mostrar</button>
-        <br>
-        <br>    
-        <div v-for="item in municipios">
-            {{ item }}
+            <h1 v-if="mostrar">Soy un texto oculto</h1>
+            <h1 v-else>Soy un texto no oculto</h1>
+            <button class="uk-button uk-button-primary" @click="mostrar = !mostrar">Mostrar</button>
+            <br>
+            <br>
+            <div v-for="item in municipios">
+                {{ item }}
+            </div>
+
+            <br>
+            <br>
+
+            <li v-for="persona in personas">
+                {{ persona.celular }}
+            </li>
+            <br>
+            <br>
+            <br>
+
+            <input type="text" v-model="msg" placeholder="Ingrese tu Nombre">
+            <br>
+            <h1>Hola!, {{msg}}</h1>
+            <button class="uk-button uk-button-primary" @click="guardar">Guardar</button>
+
+
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+                <tr v-for=" item in lista ">
+                    <td>
+                        {{ item }}
+                    </td>
+                </tr>
+
+            </table>
+
         </div>
-
-        <br>
-        <br>
-
-        <li v-for="persona in personas">
-            {{ persona.celular }}
-        </li>
-        <br>
-        <br>
-        <br>
-
-        <input type="text" v-model="msg" placeholder="Ingrese tu Nombre">
-        <br>
-        <h1>Hola!, {{msg}}</h1>
-        <button @click="guardar">Guardar</button>
-
-
-        <table>
-            <tr>
-                <th>Nombre</th>
-            </tr>
-            <tr v-for=" item in lista ">
-                <td>
-                    {{ item }}
-                </td>
-            </tr>
-
-        </table>
 
     </div>
 
@@ -71,6 +85,8 @@
     <script src="index.js"></script>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 </body>
 
 </html>
